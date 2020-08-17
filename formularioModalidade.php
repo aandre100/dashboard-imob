@@ -36,7 +36,7 @@ include 'menu.php';
 
 					<div class="card-footer py-4">
 						<div style="text-align: right">
-							<a href="#" role="button" class="btn btn-primary">Cadastrar</a>
+							<a href="#" role="button" class="btn btn-primary">Gravar</a>
 						</div>
 					</div>
 
@@ -76,7 +76,7 @@ include 'menu.php';
 </div>
 
 
-<?php 
+<?php
 include 'rodape.php';
 ?>
 

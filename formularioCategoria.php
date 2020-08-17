@@ -16,7 +16,7 @@ include 'menu.php';
 		<div class="row">
 			<div class="col">
 				<div class="card shadow">
-					<div class="card-header border-0">
+					<div class="card-header border-1">
 						<h3 class="mb-0">Registo Formulário</h3>
 					</div>
 
@@ -37,7 +37,7 @@ include 'menu.php';
 
 					<div class="card-footer py-4">
 						<div style="text-align: right">
-							<a href="#" role="button" class="btn btn-primary">Inscrever</a>
+							<a href="#" role="button" class="btn btn-primary">Gravar</a>
 						</div>
 					</div>
 				</div>

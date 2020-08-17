@@ -36,7 +36,7 @@ include 'menu.php';
 											<option>Vendedor</option>
 											<option>Administrador</option>
 											<option>Recepcionista</option>
-											
+
 										</select>
 									</div>
 								</div>
@@ -62,7 +62,7 @@ include 'menu.php';
 										<input type="text" class="form-control form-control-alternative"  placeholder="Digite um e-mail válido" name="usuario" required="" autocomplete="off">
 									</div>
 								</div>
-								
+
 							</div>
 						</form>
 					</div>
@@ -71,7 +71,7 @@ include 'menu.php';
 
 					<div class="card-footer py-4">
 						<div style="text-align: right">
-							<a href="#" role="button" class="btn btn-primary">Cadastrar</a>
+							<a href="#" role="button" class="btn btn-primary">Gravar</a>
 						</div>
 					</div>
 
@@ -111,7 +111,7 @@ include 'menu.php';
 	</div>
 
 
-	<?php 
+	<?php
 	include 'rodape.php';
 	?>
 
