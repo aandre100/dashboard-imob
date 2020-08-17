@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c855e2b259f958b4c78b734aabbabc28a82f33f3
 # [Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)]()
 
 
@@ -210,3 +214,9 @@ We use GitHub Issues as the official bug tracker for the Argon Dashboard. Here a
 - Google+: <https://plus.google.com/+creativetimpage>
 - Instagram: <https://www.instagram.com/creativetimofficial>
 
+<<<<<<< HEAD
+=======
+=======
+# dashboard-imob
+>>>>>>> f6643ee74cbdbd8eb285e04587baa9a3a9f084d5
+>>>>>>> c855e2b259f958b4c78b734aabbabc28a82f33f3
