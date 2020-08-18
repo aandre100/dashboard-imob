@@ -21,13 +21,18 @@ include 'menu.php';
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form>
+						<form action="registos/inserir_categoria.php" method="get">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Nome</label>
-										<input type="text" class="form-control form-control-alternative"  placeholder="Informe uma Categoria" name="categoria" required="">
+										<input type="text" id="categoria" class="form-control form-control-alternative"  placeholder="Informe uma Categoria" name="categoria" required="">
 									</div>
+								</div>
+							</div>
+							<div class="card-footer py-4">
+								<div style="text-align: right">
+									<button type="submit" class="btn btn-primary">Gravar</button>
 								</div>
 							</div>
 						</form>
@@ -35,11 +40,7 @@ include 'menu.php';
 
 
 
-					<div class="card-footer py-4">
-						<div style="text-align: right">
-							<a href="#" role="button" class="btn btn-primary">Gravar</a>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
