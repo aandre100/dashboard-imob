@@ -64,16 +64,18 @@ include 'menu.php';
 								</div>
 
 							</div>
+							<div class="card-footer py-4">
+								<div style="text-align: right">
+									<a href="#" role="button" class="btn btn-primary">Gravar</a>
+								</div>
+							</div>
+
 						</form>
 					</div>
 
 
 
-					<div class="card-footer py-4">
-						<div style="text-align: right">
-							<a href="#" role="button" class="btn btn-primary">Gravar</a>
-						</div>
-					</div>
+
 
 				</div>
 			</div>

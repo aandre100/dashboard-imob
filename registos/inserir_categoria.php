@@ -1,6 +1,7 @@
 <?php
 include '../menu.php';
 include './assets.php';
+include '../conexao/conexao.php';
 
 $categoria = $_GET['categoria'];
  ?>
@@ -21,6 +22,28 @@ $categoria = $_GET['categoria'];
             </div>
 
             <div class="container" style="margin-top: 10px">
+              <?php
+
+              $sql = new Sql();
+              $results = $sql->selectReturn("INSERT INTO categoria (nome_categoria) values (:categoria) ", array(
+                ':categoria' => $categoria
+              ));
+
+
+                if($results) { ?>
+                  <center>
+                      <div id='aprovado' style="width: 200px; height: 200px"></div>
+                      <h4>Aprovado</h4>
+                      <a href="../formularioCategoria.php" role='button' class="btn btn-primary"> Voltar </a>
+                    </center>
+
+            <?php    } else { ?>
+
+                    <center>
+      								<div id='erro' style="width: 200px; height: 200px"></div>
+      								<h4>Reprovado</h4>
+      							</center>
+          <?php  }                ?>
 
 
                 <div class="card-footer py-4">
@@ -65,6 +88,34 @@ $categoria = $_GET['categoria'];
         </div>
       </footer>
     </div>
+
+    <script src="animacoes/bodymovin.js"></script>
+  	<script type="text/javascript">
+  		var svgContainer = document.getElementById('erro');
+  		var animItem = bodymovin.loadAnimation({
+  			wrapper: svgContainer,
+  			animType: 'svg',
+  			loop: true,
+  			autoplay: true,
+
+  			path: 'animacoes/error.json'
+  		});
+
+  	</script>
+
+
+  	<script type="text/javascript">
+  		var svgContainer = document.getElementById('aprovado');
+  		var animItem = bodymovin.loadAnimation({
+  			wrapper: svgContainer,
+  			animType: 'svg',
+  			loop: true,
+  			autoplay: true,
+
+  			path: 'animacoes/aprovado.json'
+  		});
+  	</script>
+
 
 
     <?php
