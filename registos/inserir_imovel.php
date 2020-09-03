@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../menu.php';
 
@@ -22,7 +22,7 @@ $foto = $_FILES['foto'];
 <html>
 <head>
 	<title></title>
-	
+
 </head>
 <body>
 
@@ -39,19 +39,29 @@ $foto = $_FILES['foto'];
 						<?php
 
 						include '../conexao/conexao.php';
-
-						$sql = "INSERT INTO `imovel`(`codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`) VALUES ('$codigo','$end',$nro,'$bairro','$cidade','$estado','$cep','$complemento','$valor','$modalidade','$pagamento','$categoria','$cpf')";
-						$inserir = mysqli_query($conexao,$sql);
-						$teste = mysqli_affected_rows($conexao);
-						$teste;
-
-						#criando pasta do imovel	
+						$sql = new Sql();
+						$resultado = $sql->selectReturn("INSERT INTO `imovel`(`codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`) VALUES (:codigo,:end, :nro,:bairro, :cidade,:estado,:cep,:complemento,:valor,:modalidade,:pagamento,:categoria,:cpf)", array(
+						':codigo' => $codigo,
+						':end' => $end,
+						':nro' => $nro,
+						':bairro' => $bairro,
+						':cidade' => $cidade,
+						':estado' => $estado,
+						':cep'=> $cep,
+						':complemento' => $complemento,
+						':valor' => $valor,
+						':modalidade' => $modalidade,
+						':pagamento' => $pagamento,
+						':categoria' => $categoria,
+						':cpf' => $cpf
+						));
+						#criando pasta do imovel
 						mkdir('../fotos/'. $codigo .'');
 
 
 
 
-						if($teste == 1) {?>
+						if($resultado == 1) {?>
 
 							<center>
 								<div id='aprovado' style="width: 200px; height: 200px"></div>
@@ -72,19 +82,19 @@ $foto = $_FILES['foto'];
 
 
 
-						
+
 						foreach ($_FILES['foto']['name'] as $key => $name) {
     						 $_FILES['foto']['type'][$key];
    							 $_FILES['foto']['tmp_name'][$key];
 
-				
 
-							
+
+
 						#adicionando fotos a tabela fotos.
-				
-						
+
+
 							preg_match("/\.(png|jpg|jpeg){1}$/i", $_FILES['foto']['name'][$key], $ext);
-    
+
 							$caminho_foto2 = '../fotos/' . $codigo .'/' ;
 
 							if ($ext == true) {
@@ -96,22 +106,22 @@ $foto = $_FILES['foto'];
 								move_uploaded_file($_FILES['foto']['tmp_name'][$key], $caminho_foto);
 
 
-								
-								$sql2 = "INSERT INTO foto (nome_foto, id_imovel_foto) values ('$nome_foto', $codigo)";
-								$inserir2 = mysqli_query($conexao,$sql2);
+
+								$result2 = $sql->select("INSERT INTO foto (nome_foto, id_imovel_foto) values ('$nome_foto', $codigo)");
+
 
 
 							}
 
-						
-							
 
-							
-						};	
+
+
+
+						};
 
 
 						?>
-						
+
 
 
 					</div>
@@ -120,7 +130,7 @@ $foto = $_FILES['foto'];
 					<div class="card-footer py-4">
 
 					</div>
-					
+
 
 				</div>
 			</div>
@@ -158,7 +168,7 @@ $foto = $_FILES['foto'];
 	</div>
 
 
-	<?php 
+	<?php
 	//include '../rodape.php';
 	?>
 

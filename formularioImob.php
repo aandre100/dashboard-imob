@@ -189,7 +189,7 @@ include 'menu.php';
 												foreach($dados3 as $dado){
 
 												$idcategoria = $dado['id_categoria'];
-												$categoria = $dado['tipo_categoria'];
+												$categoria = $dado['nome_categoria'];
 
 												?>
 												<option value="<?php echo $idcategoria ?>"><?php echo $categoria ?></option>
