@@ -60,7 +60,8 @@ class Sql {
 		$this->setParams($stmt, $params);
 
 		if(!$stmt->execute()) echo $stmt->error;
-
+		// var_dump($stmt->fetchAll(\PDO::FETCH_ASSOC));
+		// exit();
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 	}

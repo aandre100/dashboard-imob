@@ -6,9 +6,6 @@ $foto = $_FILES['foto'];
 array_map(function ($foto) {
     $a = 0;
 
-
-
-
     preg_match("/\.(png|jpg|jpeg){1}$/i", $foto["name"], $ext);
         // Gera um nome Ãºnico para a imagem
 

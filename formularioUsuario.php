@@ -20,7 +20,7 @@ include 'menu.php';
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form>
+						<form action="registos/inserir_usuario.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -32,10 +32,11 @@ include 'menu.php';
 									<div class="form-group">
 										<label for="exampleFormControlSelect1">Nível do Usuário</label>
 										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="nivel">
-											<option>Gerente</option>
-											<option>Vendedor</option>
-											<option>Administrador</option>
-											<option>Recepcionista</option>
+											<option value="1">Gerente</option>
+											<option value="2">Vendedor</option>
+											<option value="3">Recepcionista</option>
+											<option value="4">Administrador</option>
+
 
 										</select>
 									</div>
@@ -59,14 +60,14 @@ include 'menu.php';
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>E-Mail</label>
-										<input type="text" class="form-control form-control-alternative"  placeholder="Digite um e-mail válido" name="usuario" required="" autocomplete="off">
+										<input type="text" class="form-control form-control-alternative"  placeholder="Digite um e-mail válido" name="email" required="" autocomplete="off">
 									</div>
 								</div>
 
 							</div>
 							<div class="card-footer py-4">
 								<div style="text-align: right">
-									<a href="#" role="button" class="btn btn-primary">Gravar</a>
+									<button type="submit" class="btn btn-primary">Gravar</button>
 								</div>
 							</div>
 

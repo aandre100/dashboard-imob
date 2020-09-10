@@ -16,6 +16,7 @@ $modalidade = $_POST['escolhamodalidade'];
 $pagamento = $_POST['pagamento'];
 $categoria = $_POST['categoria'];
 $foto = $_FILES['foto'];
+$status_imovel = "Ativo";
 
 ?>
 <!DOCTYPE html>
@@ -37,10 +38,14 @@ $foto = $_FILES['foto'];
 
 					<div class="container" style="margin-top: 10px">
 						<?php
+						// echo '<pre>';
+						// var_dump($_FILES['foto']);
+						// echo '</pre>';
+						//exit();
 
 						include '../conexao/conexao.php';
 						$sql = new Sql();
-						$resultado = $sql->selectReturn("INSERT INTO `imovel`(`codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`) VALUES (:codigo,:end, :nro,:bairro, :cidade,:estado,:cep,:complemento,:valor,:modalidade,:pagamento,:categoria,:cpf)", array(
+						$resultado = $sql->selectReturn("INSERT INTO `imovel`(`codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`, `status_imovel`) VALUES (:codigo,:end, :nro,:bairro, :cidade,:estado,:cep,:complemento,:valor,:modalidade,:pagamento,:categoria,:cpf, :status_imovel)", array(
 						':codigo' => $codigo,
 						':end' => $end,
 						':nro' => $nro,
@@ -53,7 +58,8 @@ $foto = $_FILES['foto'];
 						':modalidade' => $modalidade,
 						':pagamento' => $pagamento,
 						':categoria' => $categoria,
-						':cpf' => $cpf
+						':cpf' => $cpf,
+						':status_imovel' => $status_imovel
 						));
 						#criando pasta do imovel
 						mkdir('../fotos/'. $codigo .'');

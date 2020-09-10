@@ -3,9 +3,8 @@ include 'menu.php';
 
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 <head>
-	<meta charset="utf-8">
 	<title></title>
 </head>
 <body>
@@ -17,26 +16,62 @@ include 'menu.php';
 			<div class="col">
 				<div class="card shadow">
 					<div class="card-header border-1">
-						<h3 class="mb-0">Registo Formulário</h3>
+						<h3 class="mb-0">Cadastro de Usuário</h3>
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="registos/inserir_categoria.php" method="get">
+						<form action="./registos/">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Nome</label>
-										<input type="text" id="categoria" class="form-control form-control-alternative"  placeholder="Informe uma Categoria" name="categoria" required="">
+										<input type="text" class="form-control form-control-alternative"  placeholder="Nome compelto" name="nome" required="" autofocus="" autocomplete="off">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Nível do Usuário</label>
+										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="nivel">
+											<option>Gerente</option>
+											<option>Vendedor</option>
+											<option>Administrador</option>
+											<option>Recepcionista</option>
+
+										</select>
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Usuário</label>
+										<input type="text" class="form-control form-control-alternative"  placeholder="Usuário sem espaços" name="usuario" required="" autocomplete="off">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>Senha</label>
+										<input type="password" class="form-control form-control-alternative"  placeholder="Mínimo 8 digitos" name="senha" required="" autocomplete="off">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label>E-Mail</label>
+										<input type="text" class="form-control form-control-alternative"  placeholder="Digite um e-mail válido" name="usuario" required="" autocomplete="off">
+									</div>
+								</div>
+
+							</div>
 							<div class="card-footer py-4">
 								<div style="text-align: right">
-									<button type="submit" class="btn btn-primary">Gravar</button>
+									<a href="#" role="button" class="btn btn-primary">Cadastrar</a>
 								</div>
 							</div>
 						</form>
 					</div>
+
 
 
 
@@ -46,8 +81,9 @@ include 'menu.php';
 		</div>
 	</div>
 
-	<!-- Footer -->
 	<div class="container">
+
+		<!-- Footer -->
 		<footer class="footer">
 			<div class="row align-items-center justify-content-xl-between">
 				<div class="col-xl-6">
@@ -78,7 +114,7 @@ include 'menu.php';
 
 	<?php
 	include 'rodape.php';
-
 	?>
+
 </body>
 </html>
