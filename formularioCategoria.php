@@ -20,7 +20,7 @@ include 'menu.php';
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="/dashboard/cadastros/inserir_categoria.php" method="get">
+						<form action="/dashboard/registos/inserir_categoria.php" method="get">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">

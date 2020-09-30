@@ -22,7 +22,7 @@ $id = (int)$_GET['id'];
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="/dashboard/cadastros/inserir_categoria.php" method="get">
+						<form action="/dashboard/registos/inserir_status.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<?php
