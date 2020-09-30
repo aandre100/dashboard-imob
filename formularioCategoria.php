@@ -16,57 +16,23 @@ include 'menu.php';
 			<div class="col">
 				<div class="card shadow">
 					<div class="card-header border-1">
-						<h3 class="mb-0">Cadastro de Usuário</h3>
+						<h3 class="mb-0">Cadastro de Categoria</h3>
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="./registos/">
+						<form action="/dashboard/cadastros/inserir_categoria.php" method="get">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Nome</label>
-										<input type="text" class="form-control form-control-alternative"  placeholder="Nome compelto" name="nome" required="" autofocus="" autocomplete="off">
+										<input type="text" class="form-control form-control-alternative"  placeholder="Informe uma Categoria" id='categoria' name="categoria" required="" autocomplete="off">
 									</div>
 								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label for="exampleFormControlSelect1">Nível do Usuário</label>
-										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="nivel">
-											<option>Gerente</option>
-											<option>Vendedor</option>
-											<option>Administrador</option>
-											<option>Recepcionista</option>
+							</div>
 
-										</select>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Usuário</label>
-										<input type="text" class="form-control form-control-alternative"  placeholder="Usuário sem espaços" name="usuario" required="" autocomplete="off">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Senha</label>
-										<input type="password" class="form-control form-control-alternative"  placeholder="Mínimo 8 digitos" name="senha" required="" autocomplete="off">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>E-Mail</label>
-										<input type="text" class="form-control form-control-alternative"  placeholder="Digite um e-mail válido" name="usuario" required="" autocomplete="off">
-									</div>
-								</div>
-
-							</div>
 							<div class="card-footer py-4">
 								<div style="text-align: right">
-									<a href="#" role="button" class="btn btn-primary">Cadastrar</a>
+									<button type="submit" class="btn btn-primary">Cadastrar</button>
 								</div>
 							</div>
 						</form>

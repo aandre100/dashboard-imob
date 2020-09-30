@@ -33,7 +33,7 @@ include 'menu.php';
 										<label for="exampleFormControlSelect1">Nível do Usuário</label>
 										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="nivel">
 											<option value="1">Gerente</option>
-											<option value="2">Vendedor</option>
+											<option value="2">Corretor</option>
 											<option value="3">Recepcionista</option>
 											<option value="4">Administrador</option>
 
