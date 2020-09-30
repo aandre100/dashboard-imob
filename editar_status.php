@@ -80,24 +80,32 @@ $id = (int)$_GET['id'];
 										<?php
 
 
-										$dados2 = $sql->select('SELECT * FROM usuario WHERE nivel_acesso_usuario = :acesso', array(
-											':acesso' => 2
-										));
+										$dados3 = $sql->select('SELECT * FROM modalidade');
 
 
-										foreach($dados2 as $dado) {
-											$idusuario = $dado['id_usuario'];
-											$nome = $dado['nome_usuario'];
-											$usuario = $dado['usuario'];
+										foreach($dados3 as $dado) {
+											$idmodalidade = $dado['id_modalidade'];
+											$modalidade = $dado['tipo_modalidade'];
 
 											?>
-											<option> <?php echo $nome ?> - <?php echo $usuario ?></option>
+											<option> <?php echo $modalidade ?></option>
 
 										<?php } ?>
 
 									</select>
 								</div>
 							</div>
+
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Valor</label>
+									<input type="numeric" name="valor" class="form-control form-control-alternative" autocomplete="off" required>
+
+								</div>
+							</div>
+
+
 
 							</div>
 
