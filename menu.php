@@ -244,7 +244,7 @@
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Nro Imóveis</h5>
 											<?php
-												include 'conexao/conexao.php';
+												require_once('conexao/conexao.php'); 
 												$contagemsql = new Sql();
 												$results4 = $contagemsql->select('SELECT COUNT(id_imovel) as contagem FROM imovel');
 											 ?>

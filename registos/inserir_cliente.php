@@ -1,7 +1,7 @@
 <?php
 include '../menu.php';
 include './assets.php';
-include '../conexao/conexao.php';
+require_once('../conexao/conexao.php');
 
 
 $nome = $_GET['nome'];

@@ -1,6 +1,7 @@
 <?php
 
 include '../menu.php';
+require_once('../conexao/conexao.php');
 
 $codigo = $_POST['imovel'];
 $valor = $_POST['valorimovel'];
@@ -43,7 +44,6 @@ $status_imovel = "Ativo";
 						// echo '</pre>';
 						//exit();
 
-						include '../conexao/conexao.php';
 						$sql = new Sql();
 						$resultado = $sql->selectReturn("INSERT INTO `imovel`(`codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`, `status_imovel`) VALUES (:codigo,:end, :nro,:bairro, :cidade,:estado,:cep,:complemento,:valor,:modalidade,:pagamento,:categoria,:cpf, :status_imovel)", array(
 						':codigo' => $codigo,
@@ -63,11 +63,10 @@ $status_imovel = "Ativo";
 						));
 						#criando pasta do imovel
 						mkdir('../fotos/'. $codigo .'');
+						
 
 
-
-
-						if($resultado == 1) {?>
+						if($resultado) {?>
 
 							<center>
 								<div id='aprovado' style="width: 200px; height: 200px"></div>

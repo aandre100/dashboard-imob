@@ -133,9 +133,8 @@ include 'menu.php';
 										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="escolhamodalidade">
 											<option>Selecione uma Opção</option>
 											<?php
-											include 'conexao/conexao.php';
-											$sql = new Sql();
-											$dados = $sql->select('SELECT * FROM modalidade');
+											$sqlMod = new Sql();
+											$dados = $sqlMod->select('SELECT * FROM modalidade');
 
 
 											foreach($dados as $dado){
@@ -159,8 +158,8 @@ include 'menu.php';
 											<option>Selecione uma Opção</option>
 											<?php
 
-
-											$dados2 = $sql->select('SELECT * FROM pagamento');
+											$sqlPag = new Sql();
+											$dados2 = $sqlPag->select('SELECT * FROM pagamento');
 
 
 											foreach($dados2 as $dado) {
@@ -183,8 +182,8 @@ include 'menu.php';
 										<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="categoria">
 											<option>Selecione uma Opção</option>
 											<?php
-
-											$dados3 = $sql->select('SELECT * FROM categoria');
+											$sqlCat = new Sql();
+											$dados3 = $sqlCat->select('SELECT * FROM categoria');
 
 												foreach($dados3 as $dado){
 
