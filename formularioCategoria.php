@@ -13,14 +13,14 @@ include 'menu.php';
 	<div class="container-fluid mt--7">
 		<!-- Table -->
 		<div class="row">
-			<div class="col">
+			<div class="col"> 
 				<div class="card shadow">
 					<div class="card-header border-1">
 						<h3 class="mb-0">Cadastro de Categoria</h3>
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="/dashboard/registos/inserir_categoria.php" method="get">
+						<form action="registos/inserir_categoria.php" method="get">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">

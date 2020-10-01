@@ -256,7 +256,7 @@ include 'menu.php';
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container"> 
 
 		<!-- Footer -->
 		<footer class="footer">

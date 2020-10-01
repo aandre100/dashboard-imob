@@ -17,7 +17,7 @@ include 'menu.php';
 				<div class="card shadow">
 					<div class="card-header border-1">
 						<h3 class="mb-0">Cadastro de Usuário</h3>
-					</div>
+					</div> 
 
 					<div class="container" style="margin-top: 10px">
 						<form action="registos/inserir_cliente.php" >

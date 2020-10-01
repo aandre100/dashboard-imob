@@ -19,7 +19,7 @@ include 'menu.php';
 					<div class="card-header border-1">
 						<h3 class="mb-0">Registo Modalidade</h3>
 					</div>
-
+ 
 					<div class="container" style="margin-top: 10px">
 						<form action="registos/inserir_modalidade.php" method="get">
 							<div class="row">

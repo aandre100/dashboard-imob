@@ -12,7 +12,7 @@ include 'menu.php';
 
 	<div class="container-fluid mt--7">
 		<!-- Table -->
-		<div class="row">
+		<div class="row"> 
 			<div class="col">
 				<div class="card shadow">
 					<div class="card-header border-1">
@@ -76,7 +76,7 @@ include 'menu.php';
 </div>
 
 
-<?php 
+<?php
 include 'rodape.php';
 ?>
 

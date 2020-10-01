@@ -7,7 +7,7 @@ $categoria = $_GET['categoria'];
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
+	<head> 
 		<meta charset="utf-8">
 		<title>teste</title>
 	</head>

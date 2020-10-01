@@ -17,7 +17,7 @@
 		<!-- CSS Files -->
 		<link href="<?php echo $_SERVER['PATH_TRANSLATED'].DIRECTORY_SEPARATOR. 'assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet' ?>" />
 	</head>
-</head>
+</head> 
 <body>
 
 	<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
@@ -244,7 +244,7 @@
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Nro Imóveis</h5>
 											<?php
-												require_once('conexao/conexao.php'); 
+												require_once('conexao/conexao.php');
 												$contagemsql = new Sql();
 												$results4 = $contagemsql->select('SELECT COUNT(id_imovel) as contagem FROM imovel');
 											 ?>

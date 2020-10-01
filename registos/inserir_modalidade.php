@@ -11,7 +11,7 @@ $modalidade = $_GET['modalidade'];
 		<meta charset="utf-8">
 		<title>teste</title>
 	</head>
-	<body>
+	<body> 
     <div class="container-fluid mt--7">
       <!-- Table -->
       <div class="row">

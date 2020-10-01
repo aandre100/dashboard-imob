@@ -63,11 +63,11 @@ $status_imovel = "Ativo";
 						));
 						#criando pasta do imovel
 						mkdir('../fotos/'. $codigo .'');
-						
+
 
 
 						if($resultado) {?>
-
+ 
 							<center>
 								<div id='aprovado' style="width: 200px; height: 200px"></div>
 								<h4>Aprovado</h4>
