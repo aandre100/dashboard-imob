@@ -67,11 +67,11 @@ $status_imovel = "Ativo";
 
 
 						if($resultado) {?>
- 
+
 							<center>
 								<div id='aprovado' style="width: 200px; height: 200px"></div>
 								<h4>Aprovado</h4>
-								<a href="../formularioCategoria.php" role='button' class="btn btn-primary"> Voltar </a>
+								<a href="../listar_imob.php" role='button' class="btn btn-primary"> Voltar </a>
 							</center>
 
 						<?php	} else {?>
@@ -79,7 +79,7 @@ $status_imovel = "Ativo";
 							<center>
 								<div id='erro' style="width: 200px; height: 200px"></div>
 								<h4>Reprovado</h4>
-								<a href="../formularioModalidade.php" role='button' class="btn btn-danger"> Voltar </a>
+								<a href="../listar_imob.php" role='button' class="btn btn-danger"> Voltar </a>
 							</center>
 
 

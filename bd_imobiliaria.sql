@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: 10-Set-2020 às 15:57
--- Versão do servidor: 5.7.31-0ubuntu0.18.04.1
--- PHP Version: 7.2.24-0ubuntu0.18.04.6
+-- Host: localhost
+-- Generation Time: Oct 02, 2020 at 06:12 PM
+-- Server version: 5.7.31-0ubuntu0.16.04.1
+-- PHP Version: 7.0.33-30+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
@@ -32,7 +32,7 @@ CREATE TABLE `categoria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `categoria`
+-- Dumping data for table `categoria`
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
@@ -41,7 +41,7 @@ INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cliente`
+-- Table structure for table `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -60,7 +60,7 @@ CREATE TABLE `cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `cliente`
+-- Dumping data for table `cliente`
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome_cliente`, `sobrenome_cliente`, `endereco_cliente`, `nro_end_cliente`, `bairro_cliente`, `cidade_cliente`, `uf_cliente`, `cep_cliente`, `mail_cliente`, `cpf_cliente`, `interesse_cliente`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `cliente` (`id_cliente`, `nome_cliente`, `sobrenome_cliente`, `ender
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `foto`
+-- Table structure for table `foto`
 --
 
 CREATE TABLE `foto` (
@@ -80,7 +80,7 @@ CREATE TABLE `foto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `foto`
+-- Dumping data for table `foto`
 --
 
 INSERT INTO `foto` (`id_foto`, `nome_foto`, `id_imovel_foto`) VALUES
@@ -112,12 +112,17 @@ INSERT INTO `foto` (`id_foto`, `nome_foto`, `id_imovel_foto`) VALUES
 (28, '3d089302c0dbb0f9be081170eebff9fb.png', 72760),
 (29, '28a680514648d7e2705ee26af2fb4d57.png', 72760),
 (30, '22f44ca1af70207b220e02e935815a2e.png', 72760),
-(31, '096c07eb636d3a9d42edd6dcdcf2cb9f.png', 72760);
+(31, '096c07eb636d3a9d42edd6dcdcf2cb9f.png', 72760),
+(32, 'f08d096e0f9b2dc6639765333f1c7901.jpg', 25284),
+(33, '50389a8c9c451dc983d2a2d1f1413584.PNG', 25284),
+(34, '27e42c59d78bf1d2e47a2d4015ab2734.PNG', 25284),
+(35, 'b00c82aa7932cc28ce5a6e1f1a89182a.PNG', 25284),
+(36, '7473cfcd5beb48b77dece7fe1085fd9c.PNG', 69929);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `imovel`
+-- Table structure for table `imovel`
 --
 
 CREATE TABLE `imovel` (
@@ -139,20 +144,19 @@ CREATE TABLE `imovel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `imovel`
+-- Dumping data for table `imovel`
 --
 
 INSERT INTO `imovel` (`id_imovel`, `codigo_imovel`, `end_imovel`, `nro_end_imovel`, `bairro_imovel`, `cidade_imovel`, `uf_imovel`, `cep_imovel`, `complemento_imovel`, `valor_imovel`, `id_modalidade_imovel`, `id_pagamento_imovel`, `id_categoria_imovel`, `cpf_cliente_imovel`, `status_imovel`) VALUES
-(1, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, ''),
-(2, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, ''),
-(3, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, ''),
-(4, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, ''),
-(5, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, '');
+(1, 72760, '3452345', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, 'Ativado'),
+(4, 72762, '3452346', 2345, '2345', 'fadasd', 'AC', '435345', '2345', 234234, 1, 2, 1, 234234, 'venda'),
+(6, 25284, 'Rua da Alegria 930', 60, 'Porto', 'Porto', 'RS', '4000-039', 'Porto', 25000, 3, 2, 1, 2332232, 'Ativo'),
+(7, 69929, 'Rua Nova das Perlinhas', 45, 'São José', 'Brasilia', 'RJ', '4530', 'Barraca', 240000, 3, 3, 1, 2346767, 'Ativo');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `modalidade`
+-- Table structure for table `modalidade`
 --
 
 CREATE TABLE `modalidade` (
@@ -161,7 +165,7 @@ CREATE TABLE `modalidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `modalidade`
+-- Dumping data for table `modalidade`
 --
 
 INSERT INTO `modalidade` (`id_modalidade`, `tipo_modalidade`) VALUES
@@ -171,7 +175,7 @@ INSERT INTO `modalidade` (`id_modalidade`, `tipo_modalidade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pagamento`
+-- Table structure for table `pagamento`
 --
 
 CREATE TABLE `pagamento` (
@@ -180,7 +184,7 @@ CREATE TABLE `pagamento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `pagamento`
+-- Dumping data for table `pagamento`
 --
 
 INSERT INTO `pagamento` (`id_pagamento`, `tipo_pagamento`) VALUES
@@ -191,7 +195,7 @@ INSERT INTO `pagamento` (`id_pagamento`, `tipo_pagamento`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `status_imovel`
+-- Table structure for table `status_imovel`
 --
 
 CREATE TABLE `status_imovel` (
@@ -199,13 +203,22 @@ CREATE TABLE `status_imovel` (
   `usuario_corretor` varchar(50) NOT NULL,
   `codigo_imovel` int(11) NOT NULL,
   `status_imovel` varchar(50) NOT NULL,
-  `valor_negocio` float NOT NULL
+  `valor_negocio` float NOT NULL,
+  `data_atual` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `status_imovel`
+--
+
+INSERT INTO `status_imovel` (`id_status_imovel`, `usuario_corretor`, `codigo_imovel`, `status_imovel`, `valor_negocio`, `data_atual`) VALUES
+(2, 'cccosta', 72762, 'venda', 20000, '2020-10-02'),
+(3, 'jjsimoes', 72762, 'venda', 265000, '2020-10-02');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -218,11 +231,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome_usuario`, `nivel_acesso_usuario`, `mail_usuario`, `usuario`, `senha_usuario`) VALUES
-(3, 'André Cardoso SPZN1', '4', '1141726@isep.ipp.pt', 'aandre100', '5dd67ec9a78ca776f38a5d6795ec4a05');
+(3, 'André Cardoso SPZN1', '4', '1141726@isep.ipp.pt', 'aandre100', '5dd67ec9a78ca776f38a5d6795ec4a05'),
+(4, 'José Costa', '2', 'webmaster@spzn.pt', 'cccosta', '4dc3bd62e1695958e20810b37ce74213'),
+(5, 'Luis Simões', '2', 'jjsimoes@mail.pt', 'jjsimoes', 'f2e930c442f6c8602ff00940008f6c98');
 
 --
 -- Indexes for dumped tables
@@ -294,12 +309,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT for table `foto`
 --
 ALTER TABLE `foto`
-  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_foto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `imovel`
 --
 ALTER TABLE `imovel`
-  MODIFY `id_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `modalidade`
 --
@@ -314,12 +329,12 @@ ALTER TABLE `pagamento`
 -- AUTO_INCREMENT for table `status_imovel`
 --
 ALTER TABLE `status_imovel`
-  MODIFY `id_status_imovel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_status_imovel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

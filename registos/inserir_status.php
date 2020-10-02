@@ -32,12 +32,14 @@ $pagamento = $_POST['valor'];
 				  ':codigo' => $codigo
 			  ));
 			  #inserção na tabela status_imovel
+			  $data = date('Y/m/d');
 			  $sqlInsertStatus = new Sql();
-			  $insereStatus = $sqlInsertStatus->query("INSERT INTO status_imovel (usuario_corretor, codigo_imovel, status_imovel, valor_negocio) VALUES (:corretor, :codigo, :status, :valor)", array(
+			  $insereStatus = $sqlInsertStatus->query("INSERT INTO status_imovel (usuario_corretor, codigo_imovel, status_imovel, valor_negocio, data_atual) VALUES (:corretor, :codigo, :status, :valor, :data)", array(
 				  ':corretor' => $corretor,
 				  ':codigo' => $codigo,
 				  ':status' => $modalidade,
-				  ':valor'  => $pagamento
+				  ':valor'  => $pagamento,
+				  ':data' => $data
 			  ));
 
 

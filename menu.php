@@ -17,7 +17,7 @@
 		<!-- CSS Files -->
 		<link href="<?php echo $_SERVER['PATH_TRANSLATED'].DIRECTORY_SEPARATOR. 'assets/css/argon-dashboard.css?v=1.1.0" rel="stylesheet' ?>" />
 	</head>
-</head> 
+</head>
 <body>
 
 	<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
@@ -268,8 +268,13 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                      <span class="h2 font-weight-bold mb-0">2,356</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">IMÓVEIS VENDIDOS</h5>
+                      <span class="h2 font-weight-bold mb-0">
+						  <?php
+						  $sqlVendas = new Sql();
+						  $totalVendas =  $sqlVendas->select("SELECT COUNT(id_status) FROM status_imovel WHERE ")
+						  ?>
+					  </span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
