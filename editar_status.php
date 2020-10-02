@@ -3,6 +3,8 @@ include 'menu.php';
 
 $id = (int)$_GET['id'];
 
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +24,7 @@ $id = (int)$_GET['id'];
 					</div>
 
 					<div class="container" style="margin-top: 10px">
-						<form action="/dashboard/registos/inserir_status.php" method="post">
+						<form action="registos/inserir_status.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<?php
@@ -64,7 +66,7 @@ $id = (int)$_GET['id'];
 											$usuario = $dado['usuario'];
 
 											?>
-											<option> <?php echo $nome ?> - <?php echo $usuario ?></option>
+											<option value="<?php echo $usuario ?>"> <?php echo $nome ?> - <?php echo $usuario ?></option>
 
 										<?php } ?>
 
@@ -75,7 +77,7 @@ $id = (int)$_GET['id'];
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="exampleFormControlSelect1">Modalidade</label>
-									<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="pagamento">
+									<select class="form-control form-control-alternative" id="exampleFormControlSelect1" name="modalidade">
 										<option>Selecione uma Opção</option>
 										<?php
 
