@@ -272,7 +272,10 @@
                       <span class="h2 font-weight-bold mb-0">
 						  <?php
 						  $sqlVendas = new Sql();
-						  $totalVendas =  $sqlVendas->select("SELECT COUNT(id_status) FROM status_imovel WHERE ")
+						  $totalVendas =  $sqlVendas->select("SELECT COUNT(id_status_imovel) as qtd_venda FROM status_imovel WHERE status_imovel = :venda", array(
+								':venda' => 'venda'
+							));
+							echo $totalVendas[0]['qtd_venda'];
 						  ?>
 					  </span>
                     </div>
@@ -283,8 +286,32 @@
                     </div>
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last week</span>
+										<?php
+									  $sqlVendas1 = new Sql();
+									  $totalVendas1 =  $sqlVendas1->select("SELECT * FROM imovel INNER JOIN status_imovel ON status_imovel.codigo_imovel = imovel.codigo_imovel WHERE status_imovel.status_imovel = :venda AND imovel.status_imovel = :venda ", array(
+											':venda' => 'venda'
+										));
+
+										foreach($totalVendas1 as $valor){
+											$valorImovel = $valor['valor_imovel'];
+											$valorVenda = $valor['valor_negocio'];
+											$quantidadeImovel += $valorImovel;
+											$quantidadeVenda += $valorVenda;
+										}
+										$total =  $quantidadeVenda - $quantidadeImovel;
+
+										if($total <= 0){ ?>
+
+											<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i><?php echo number_format($total, 2, ',', ' '); ?></span>
+											<span class="text-nowrap">Negativo</span>
+
+
+									<?php 	} else { ?>
+										<span class="text-success mr-2"><i class="fas fa-arrow-up"></i><?php echo number_format($total, 2, ',', ' '); ?></span>
+										<span class="text-nowrap">Positivo</span>
+
+									<?php	} 	?>
+
                   </p>
                 </div>
               </div>
