@@ -302,12 +302,12 @@
 
 										if($total <= 0){ ?>
 
-											<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i><?php echo number_format($total, 2, ',', ' '); ?></span>
+											<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i>&nbsp;<?php echo number_format($total, 2, ',', ' '); ?></span>
 											<span class="text-nowrap">Negativo</span>
 
 
 									<?php 	} else { ?>
-										<span class="text-success mr-2"><i class="fas fa-arrow-up"></i><?php echo number_format($total, 2, ',', ' '); ?></span>
+										<span class="text-success mr-2"><i class="fas fa-arrow-up"></i>&nbsp;<?php echo number_format($total, 2, ',', ' '); ?></span>
 										<span class="text-nowrap">Positivo</span>
 
 									<?php	} 	?>
@@ -321,8 +321,18 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Imóveis Alugados</h5>
+                      <span class="h2 font-weight-bold mb-0">
+												<?php
+											  $sqlAluguer = new Sql();
+											  $totalAluguer =  $sqlAluguer->select("SELECT COUNT(id_status_imovel) as qtd_aluguer FROM status_imovel WHERE status_imovel = :venda", array(
+													':venda' => 'aluguer'
+												));
+												echo $totalAluguer[0]['qtd_aluguer'];
+											  ?>
+
+
+											</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
