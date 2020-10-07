@@ -236,6 +236,7 @@
       <div class="container-fluid">
         <div class="header-body">
           <!-- Card stats -->
+		  <br>
           <div class="row">
             <div class="col-xl-3 col-lg-6">
               <div class="card card-stats mb-4 mb-xl-0">
@@ -250,11 +251,7 @@
 											 ?>
                       <span class="h2 font-weight-bold mb-0"><?php echo $results4[0]['contagem']; ?></span>
                     </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                        <i class="fas fa-chart-bar"></i>
-                      </div>
-                    </div>
+
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
 
@@ -279,11 +276,7 @@
 						  ?>
 					  </span>
                     </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                        <i class="fas fa-chart-pie"></i>
-                      </div>
-                    </div>
+
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
 										<?php
@@ -325,8 +318,8 @@
                       <span class="h2 font-weight-bold mb-0">
 												<?php
 											  $sqlAluguer = new Sql();
-											  $totalAluguer =  $sqlAluguer->select("SELECT COUNT(id_status_imovel) as qtd_aluguer FROM status_imovel WHERE status_imovel = :venda", array(
-													':venda' => 'aluguer'
+											  $totalAluguer =  $sqlAluguer->select("SELECT COUNT(id_status_imovel) as qtd_aluguer FROM status_imovel WHERE status_imovel = :aluguer", array(
+													':aluguer' => 'aluguer'
 												));
 												echo $totalAluguer[0]['qtd_aluguer'];
 											  ?>
@@ -334,15 +327,21 @@
 
 											</span>
                     </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                        <i class="fas fa-users"></i>
-                      </div>
-                    </div>
+
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
-                    <span class="text-nowrap">Since yesterday</span>
+					  <?php
+					  $sqlAluguer1 = new Sql();
+					  $totalAluguer1 =  $sqlAluguer1->select("SELECT SUM(valor_negocio) as valortotal FROM status_imovel  WHERE status_imovel = :aluguer", array(
+							':aluguer' => 'aluguer'
+						));
+
+
+						$totalA =  $totalAluguer1[0]['valortotal']*0.15;
+
+					   ?>
+                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> <?php echo number_format($totalA, 2, ',', ' '); ?> </span>
+                    <span class="text-nowrap">lucro</span>
                   </p>
                 </div>
               </div>
@@ -352,19 +351,22 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
-                      <span class="h2 font-weight-bold mb-0">49,65%</span>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Lucro Bruto</h5>
+					  <?php
+					  	$totalbruto = $totalA+$total;
+					   ?>
+                      <span class="h2 font-weight-bold mb-0"><?php  echo number_format($totalbruto, 2, ',', ' '); ?></span>
                     </div>
-                    <div class="col-auto">
-                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                        <i class="fas fa-percent"></i>
-                      </div>
-                    </div>
+
                   </div>
                   <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p>
+					  <?php
+					  if($total > 0) {  ?>
+                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> Saldo Positivo</span>
+				<?php } else { ?>
+					<span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> Saldo Negativo</span>
+				<?php } ?>
+                   </p>
                 </div>
               </div>
             </div>
