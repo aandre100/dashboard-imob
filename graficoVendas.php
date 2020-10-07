@@ -7,8 +7,14 @@ $dadosGrafico =  $sqlGrafico->select("SELECT SUM(valor_negocio) as valor_negocio
   # chart.js - Preparar Valores#
   $datas = '';
   $valores = '';
+  //var_dump($dadosGrafico);
   foreach( $dadosGrafico as $dados){
-	  $datas = $datas . '"' .$dados['data_atual'].'",';
+	  $dataFormatada = $dados['data_atual'];
+	  $datafinal = explode('-', $dataFormatada);
+
+	  $dataaarray = $datafinal[2] .'/'. $datafinal[1] .'/'.$datafinal[0];
+	  $datas = $datas . '"' .$dataaarray.'",';
+
 	  $valores = $valores .'"' . $dados['valor_negocio'] .'",';
 
 	  $datas = trim($datas);
