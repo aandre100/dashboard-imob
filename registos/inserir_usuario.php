@@ -12,7 +12,7 @@ $email = $_POST['email'];
 
 $senha = password_hash($senha, PASSWORD_BCRYPT);
  ?>
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
@@ -36,7 +36,7 @@ $senha = password_hash($senha, PASSWORD_BCRYPT);
                 ':nome' => $nome,
                 ':nivel' => $nivel,
                 ':usuario' => $usuario,
-                ':senha' => md5($senha),
+                ':senha' => $senha,
                 ':email' => $email
               ));
 

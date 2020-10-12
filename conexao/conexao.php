@@ -49,7 +49,7 @@ class Sql {
 		$this->setParams($stmt, $params);
 
 		return $stmt->execute();
-		
+
 
 	}
 
@@ -66,6 +66,7 @@ class Sql {
 		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 	}
+	
   public function selectReturn($rawQuery, $params = array())
   {
 
