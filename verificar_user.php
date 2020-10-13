@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('conexao/conexao.php');
 include './script/password.php';
 
@@ -16,13 +17,15 @@ $senhabd = $loginUser[0]['senha_usuario'];
 
 if(count($loginUser) == 1){
 	if(password_verify($password, $senhabd)){
-	$_SESSION['usuario'] = $usuariox;
+	$_SESSION['usuario'] = $user;
 	header("Location: index.php");
-
+	exit();
 }else{
-	echo 'wrong pass';
+	header("Location: login.php?id=1");
+	exit();
 }
 }else{
-	echo 'Nop';
+	header("Location: login.php?id=2");
+	exit();
 }
  ?>
